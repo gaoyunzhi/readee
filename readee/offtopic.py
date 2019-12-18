@@ -19,7 +19,7 @@ OFFTOPIC_ATT = [
 	't_callout', 'add-interest', 'bb-newsletter', 'popover', 'toast', 'after-article', 
 	'submeta', 'rich-link__container', 'content__meta-container', 'mw-editsection',
 	'navigation', 'noprint', 'jump-to-nav', 'toctitle', 'reflist', 'contentSub',
-	'参考文献', '引用', '网页', 'printfooter', 'catlinks'
+	'参考文献', '引用', '网页', 'printfooter', 'catlinks', 'footer'
 ]
 
 OFFTOPIC_CLASSES = ['ads']
