@@ -12,7 +12,7 @@ urls = [
 def getFileName(url):
 	os.system('mkdir result > /dev/null 2>&1')
 	name = url.split('/')[-1]
-	name = name.split('.')[0]
+	name = unicode(name.split('.')[0], "utf-8")
 	return 'result/%s.html' % name
 
 def test():
