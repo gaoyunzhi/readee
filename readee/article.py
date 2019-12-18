@@ -42,7 +42,8 @@ def _getUrlContent(url):
 	return requests.get(url, headers=headers).text
 
 def _cachedContent(url):
-	cache = 'tmp_' + hashlib.sha224(url.encode('utf-8')).hexdigest()[:10] + '.html'
+	os.system('mkdir tmp > /dev/null 2>&1')
+	cache = 'tmp/' + hashlib.sha224(url.encode('utf-8')).hexdigest()[:10] + '.html'
 	try:
 		with open(cache) as f:
 			return f.read()
