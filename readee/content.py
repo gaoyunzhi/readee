@@ -15,15 +15,16 @@ import sys
 
 def saveSoup(soup, stage):
 	if 'debug' in str(sys.argv):
-		with open("tmp_%d.html" % stage, 'w') as f:
+		os.system('mkdir tmp > /dev/null 2>&1')
+		with open("tmp/%d.html" % stage, 'w') as f:
 			f.write(str(soup))
 
-def _findMainFromSoup(soup, url):
+def _findMainFromSoup(soup, url, args = {}):
 	domain = _findDomain(soup, url)
 	saveSoup(soup, 0)
-	soup = _replaceOfftopicLink(soup)
+	soup = _replaceOfftopicLink(soup, args)
 	saveSoup(soup, 1)
-	soup = _decomposeOfftopic(soup, url)
+	soup = _decomposeOfftopic(soup, url, args)
 	saveSoup(soup, 2)
 	soup = _cleanupImages(soup, domain)
 	saveSoup(soup, 3)
@@ -33,15 +34,16 @@ def _findMainFromSoup(soup, url):
 	saveSoup(soup, 5)
 	soup = _finalTouch(soup, url)
 	saveSoup(soup, 6)
-	_moveHeadPhoto(soup, before_content)
+	if not args.get('no_move_head_photo'):
+		_moveHeadPhoto(soup, before_content)
 	saveSoup(soup, 7)
 	return soup
 
-def _findMain(soup, doc, url):
-	result = _findMainFromSoup(soup, url)
-	if result:
+def _findMain(soup, doc, url, args = {}):
+	result = _findMainFromSoup(soup, url, args)
+	if result and result.text and result.text.strip():
 		return result
-	result = _findMainFromSoup(BeautifulSoup(doc.content), url)
-	if result:
+	result = _findMainFromSoup(BeautifulSoup(doc.content), url, args)
+	if result and result.text and result.text.strip():
 		return result
 	return doc.content()

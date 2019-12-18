@@ -11,7 +11,7 @@ urls = [
 
 def getFileName(url):
 	os.system('mkdir result > /dev/null 2>&1')
-	name = url.encode('utf-8').split('/')[-1]
+	name = url.split('/')[-1]
 	name = name.split('.')[0]
 	return 'result/%s.html' % name
 

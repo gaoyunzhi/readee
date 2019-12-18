@@ -70,7 +70,7 @@ def _decompseAds(soup):
 		if matchKey(item.text, P_AD_WORDS) or item.text in ['广告']:
 			_decompose(item)
 
-def _decomposeOfftopic(soup, url):
+def _decomposeOfftopic(soup, url, args = {}):
 	for item in soup.find_all():
 		if _isOffTopic(item.attrs) or \
 			item.name in OFFTOPIC_TAG:
@@ -80,7 +80,7 @@ def _decomposeOfftopic(soup, url):
 		for item in soup.find_all(class_=c):
 			_decompose(item)
 
-	if not matchKey(url, ['medium']):
+	if not matchKey(url, ['medium']) and not args.get('include_title'):
 		for item in soup.find_all('h1'):
 			_decompose(item)
 

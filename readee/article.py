@@ -4,18 +4,10 @@
 import requests
 from bs4 import BeautifulSoup
 from readability import Document
-from .title import _findTitle
-from .author import _findAuthor
 from .content import _findMain
 import hashlib
 import sys
-
-class _Article(object):
-	def __init__(self, title, author, text, url = None):
-		self.title = title
-		self.author = author
-		self.text = text
-		self.url = url
+import os
 
 def _findUrl(url, soup):
 	if 'telegra.ph' not in url:
@@ -53,16 +45,12 @@ def _cachedContent(url):
 			f.write(content)
 		return content
 
-def _getArticle(url):
+def _getArticle(url, args = {}):
 	if 'test' in str(sys.argv):
 		content = _cachedContent(url)
 	else:
 		content = _getUrlContent(url)
 	soup = BeautifulSoup(_trimWebpage(content), 'html.parser')
-	article_url = _findUrl(url, soup)
+	article_url = _findUrl(url, soup) # may need to use
 	doc = Document(content)
-	return _Article(
-		_findTitle(soup, doc), 
-		_findAuthor(soup), 
-		_findMain(soup, doc, url), 
-		article_url)
+	return _findMain(soup, doc, url, args)

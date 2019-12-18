@@ -4,7 +4,9 @@
 from telegram_util import matchKey
 from .images import _yieldPossibleImg
 
-def _replaceOfftopicLink(soup):
+def _replaceOfftopicLink(soup, args = {}):
+	if args.get('preserve_link'):
+		return soup
 	for link in soup.find_all("a"):
 		if matchKey(link.text, ['英文版']):
 			continue
