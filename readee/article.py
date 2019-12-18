@@ -49,12 +49,14 @@ def _cachedContent(url):
 			f.write(content)
 		return content
 
-def _getArticle(url, args = {}):
-	if 'test' in str(sys.argv):
-		content = _cachedContent(url)
-	else:
-		content = _getUrlContent(url)
+def getArticle(url, content, args = {}):
+	if not content:
+		if 'test' in str(sys.argv):
+			content = _cachedContent(url)
+		else:
+			content = _getUrlContent(url)
 	soup = BeautifulSoup(_trimWebpage(content), 'html.parser')
 	article_url = _findUrl(url, soup) # may need to use
 	doc = Document(content)
 	return _findMain(soup, doc, url, args)
+
