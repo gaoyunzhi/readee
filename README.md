@@ -1,17 +1,14 @@
-# export_to_telegraph
+# readee
 
-Library for export webpage to Telegraph.
+Library for export webpage to reader mode html.
 
 ## usage
 
 ```
-import export_to_telegraph
-export_to_telegraph.TOKEN = YOUR_TELEGRAPH_TOKEN
-telegraph_url = export_to_telegraph.export(webpage_url)
+import readee
+beautiful_soup_html = readee.export(webpage_url)
 ```
-
-If export failed, `telegraph_url` will be None.
 
 ## how to install
 
-`pip3 install export_to_telegraph`
+`pip3 install readee`
