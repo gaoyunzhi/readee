@@ -12,5 +12,6 @@ def _formaturl(url):
 
 def export(url, **args):
 	article = _getArticle(_formaturl(url), args)
-	if not article.text or not article.text.text.strip():
+	if not article.text or not article.text.strip():
 		raise Exception('Can not find main content')
+	return article

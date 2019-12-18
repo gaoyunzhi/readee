@@ -28,8 +28,8 @@ def test():
 		print('原文：', url)
 		name = getFileName(url)
 		with open(name, 'w') as f:
-			f.write(readee.export(url))
-		print('导出：', r)
+			f.write(str(readee.export(url)))
+		print('导出：', name)
 		if 'open' in str(sys.argv):
 			os.system('open ' + name + ' -g')
 

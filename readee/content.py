@@ -12,6 +12,7 @@ from .offtopic import _decomposeOfftopic
 from .tag_replace import _tagReplace
 from telegram_util import matchKey
 import sys
+import os
 
 def saveSoup(soup, stage):
 	if 'debug' in str(sys.argv):
