@@ -35,7 +35,7 @@ def _findMainFromSoup(soup, url, args = {}):
 	saveSoup(soup, 5)
 	soup = _finalTouch(soup, url)
 	saveSoup(soup, 6)
-	if not args.get('no_move_head_photo'):
+	if args.get('move_head_photo'):
 		_moveHeadPhoto(soup, before_content)
 	saveSoup(soup, 7)
 	return soup
