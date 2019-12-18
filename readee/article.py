@@ -9,7 +9,7 @@ import hashlib
 import sys
 import os
 
-TO_REMOVE = ['跳到导航', '跳到搜索']
+TO_REMOVE = ['跳到导航', '跳到搜索', 'Skip to main content']
 
 def _findUrl(url, soup):
 	if 'telegra.ph' not in url:

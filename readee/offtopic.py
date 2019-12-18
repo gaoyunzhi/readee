@@ -38,6 +38,8 @@ P_AD_WORDS = [
 def _isOffTopic(attrs):
 	if not attrs:
 		return False
+	if 'miro.medium' in str(attrs):
+		return True
 	r = []
 	for k, v in attrs.items():
 		if matchKey(k, ['href', 'src', 'url', 'alt', 'data']):
