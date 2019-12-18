@@ -6,7 +6,7 @@ from .common import fact, _wrap
 from .images import _yieldPossibleImg
 import sys
 
-OFFTOPIC_TAG = ['small', 'address', 'meta', 'script']
+OFFTOPIC_TAG = ['small', 'address', 'meta', 'script', 'sup']
 
 OFFTOPIC_ATT = [
 	'social', 'comment', 'latest', 'widget', 'more', 'button', 'facebook', 
@@ -18,7 +18,8 @@ OFFTOPIC_ATT = [
 	'adblocker', 'tagline', 'navbar', 'navmenu', 'topHeader', 'Post Bottom',
 	't_callout', 'add-interest', 'bb-newsletter', 'popover', 'toast', 'after-article', 
 	'submeta', 'rich-link__container', 'content__meta-container', 'mw-editsection',
-	'navigation'
+	'navigation', 'noprint', 'jump-to-nav', 'toctitle', 'reflist', 'contentSub',
+	'参考文献', '引用', '网页', 'printfooter', 'catlinks'
 ]
 
 OFFTOPIC_CLASSES = ['ads']

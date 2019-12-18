@@ -9,6 +9,8 @@ import hashlib
 import sys
 import os
 
+TO_REMOVE = ['跳到导航', '跳到搜索']
+
 def _findUrl(url, soup):
 	if 'telegra.ph' not in url:
 		return
@@ -19,6 +21,8 @@ def _findUrl(url, soup):
 	return link and link.get('href')
 
 def _trimWebpage(raw):
+	for to_remove in TO_REMOVE:
+		raw = raw.replace(to_remove, '')
 	anchor = '<!-- detail_toolbox -->'
 	index = raw.find(anchor)
 	if index != -1:
