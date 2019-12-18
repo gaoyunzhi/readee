@@ -19,7 +19,7 @@ OFFTOPIC_ATT = [
 	't_callout', 'add-interest', 'bb-newsletter', 'popover', 'toast', 'after-article', 
 	'submeta', 'rich-link__container', 'content__meta-container', 'mw-editsection',
 	'navigation', 'noprint', 'jump-to-nav', 'toctitle', 'reflist', 'contentSub',
-	'参考文献', '引用', '网页', 'printfooter', 'catlinks', 'footer'
+	'参考文献', '引用', '网页', 'printfooter', 'catlinks', 'footer', 'Post Bottom'
 ]
 
 OFFTOPIC_CLASSES = ['ads']
@@ -38,8 +38,6 @@ P_AD_WORDS = [
 def _isOffTopic(attrs):
 	if not attrs:
 		return False
-	if 'miro.medium' in str(attrs):
-		return True
 	r = []
 	for k, v in attrs.items():
 		if matchKey(k, ['href', 'src', 'url', 'alt', 'data']):
