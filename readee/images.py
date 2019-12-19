@@ -10,9 +10,7 @@ def _getCaption(item):
 		return
 	for x in item.find_all():
 		if 'caption' in str(x.attrs).lower():
-			caption = fact().new_tag("figcaption")
-			caption.append(_copyB(x))
-			return caption
+			return x
 
 def _formatImgUrl(raw, domain):
 	parts = raw.split('/')
@@ -118,13 +116,16 @@ def _cleanupImages(soup, domain):
 		if not img.parent:
 			img.decompose()
 			continue
-		caption = _getCaption(img.parent)
+		raw_caption = _getCaption(img.parent)
+		if raw_caption:
+			caption = fact().new_tag("figcaption")
+			caption.append(_copyB(raw_caption))
 		figure = fact().new_tag("figure")
 		figure.append(_copyB(img))
 		
-		if caption:
-			figure.append(_copyB(caption))
-			caption.decompose()
+		if raw_caption:
+			figure.append(caption)
+			raw_caption.decompose()
 		r = _cleanupFigure(figure, domain)
 		if r: 
 			img.replace_with(r)
