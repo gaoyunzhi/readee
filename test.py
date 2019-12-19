@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://zh.wikipedia.org/zh-cn/%E6%98%A5%E8%95%BE%E8%AE%A1%E5%88%92',
+	'https://thestir.cafemom.com/parenting_news/220907/felicia-saunders-moms-photo-shoot-fed-is-best/308747/pin_it/9?utm_medium=Facebook&utm_source=LTcom&fbclid=IwAR0XrrDVPTiWg2Eenxoy-8yXNxB2HSBIhFIYsjQm4A215EGugbNSkMjJLp8',
 ]
 
 def getFileName(url):
