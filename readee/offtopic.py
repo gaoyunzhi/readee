@@ -40,7 +40,7 @@ def _isOffTopic(attrs):
 		return False
 	r = []
 	for k, v in attrs.items():
-		if matchKey(k, ['href', 'src', 'url', 'alt', 'data']):
+		if matchKey(k, ['href', 'src', 'url', 'alt', 'data', 'xmlns:fb']):
 			continue
 		r.append(str(k) + ' : ' + str(v))
 	r = '\n'.join(r)

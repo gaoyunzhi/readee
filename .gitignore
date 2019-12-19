@@ -1,6 +1,7 @@
 *build*
 *dist*
 *tmp/*
+*result/*
 *nohup*
 *cache*
 *egg-info*
