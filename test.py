@@ -6,13 +6,13 @@ import os
 import sys
 
 urls = [
-	'https://thestir.cafemom.com/parenting_news/220907/felicia-saunders-moms-photo-shoot-fed-is-best/307364/saunders_left_that_experience_with_a_valuable_lesson_that_what_is_best_for_my_child_and_i_is_not_always_what_may_be_best_for_the_next_family/4',
+	'https://www.douban.com/people/yidam/status/2739858001/',
 ]
 
 def getFileName(url):
 	os.system('mkdir result > /dev/null 2>&1')
-	name = url.split('/')[-1]
-	name = name.split('.')[0]
+	name = [x for x in url.split('/') if x][-1]
+	name = [x for x in name.split('.') if x][0]
 	return 'result/%s.html' % name
 
 def test():

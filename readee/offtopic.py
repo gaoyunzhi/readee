@@ -9,7 +9,7 @@ import sys
 OFFTOPIC_TAG = ['small', 'address', 'meta', 'script', 'sup']
 
 OFFTOPIC_ATT = [
-	'social', 'comment', 'latest', 'widget', 'more', 'button', 'facebook', 
+	'social', 'comment', 'latest', 'more', 'button', 'facebook', 
 	'cn-carousel-medium-strip', 'video__end-slate__top-wrapper', 'metadata', 
 	'el__article--embed', 'signup', 'related', 'disclaimer', 'off-screen', 
 	'story-body__unordered-list', 'story-image-copyright', 'article-header', 
