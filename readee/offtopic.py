@@ -20,7 +20,7 @@ OFFTOPIC_ATT = [
 	'submeta', 'rich-link__container', 'content__meta-container', 'mw-editsection',
 	'navigation', 'noprint', 'jump-to-nav', 'toctitle', 'reflist', 'contentSub',
 	'参考文献', '引用', '网页', 'printfooter', 'catlinks', 'footer', 'Post Bottom',
-	'ad-unit', 'box-ad',
+	'ad-unit', 'box-ad', "class : ['tabs']", "class : ['hd']"
 ]
 
 OFFTOPIC_CLASSES = ['ads']
