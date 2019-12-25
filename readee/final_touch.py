@@ -30,6 +30,8 @@ def _findFigure(soup, before_content):
 		return 
 	before_content = BeautifulSoup(before_content, features="lxml")
 	figures = before_content.find_all('figure')
+	if 'douban' in str(before_content):
+		return
 	if len(list(figures)) == 1:
 		return figures[0]
 	if 'telegraph.co.uk' in str(before_content):

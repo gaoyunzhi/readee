@@ -28,7 +28,7 @@ def test():
 		print('原文：', url)
 		name = getFileName(url)
 		with open(name, 'w') as f:
-			f.write(str(readee.export(url, include_title=True)))
+			f.write(str(readee.export(url, include_title=True, move_head_photo=True)))
 		print('导出：', name)
 		if 'open' in str(sys.argv):
 			os.system('open ' + name + ' -g')
