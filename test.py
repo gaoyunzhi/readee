@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://www.douban.com/people/yidam/status/2739858001/',
+	'https://mp.weixin.qq.com/s?__biz=MjM5NDEwMDI1MA==&mid=2654666539&idx=1&sn=783dcb8c9f97536636b5fc2be5b1c1c4&chksm=bd42ba5e8a353348d75c0bb183b61ffe140a5281ba7097cdf1654e45ca54ba3869a5817e5651&dt_dapp=1#rd',
 ]
 
 def getFileName(url):
