@@ -11,10 +11,10 @@ def _findRawContent(item):
 	return item.text.strip()
 
 def fact():
-	return BeautifulSoup("<div></div>", features="lxml")
+	return BeautifulSoup("<div></div>", features="html.parser")
 
 def _copyB(soup):
-	return BeautifulSoup(str(soup), features="lxml")
+	return BeautifulSoup(str(soup), features="html.parser")
 
 def _seemsValidText(soup, limit=500):
 	if not soup:

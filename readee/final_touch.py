@@ -23,12 +23,12 @@ def _findFigure(soup, before_content):
 	figure = soup.find('figure')
 	if figure:
 		html = str(soup)
-		pre_content = BeautifulSoup(html[:html.find('<figure')], features="lxml")
+		pre_content = BeautifulSoup(html[:html.find('<figure')], features="html.parser")
 		if len(pre_content.text) < 200:
 			return figure
 	if not before_content:
 		return 
-	before_content = BeautifulSoup(before_content, features="lxml")
+	before_content = BeautifulSoup(before_content, features="html.parser")
 	figures = before_content.find_all('figure')
 	if 'douban' in str(before_content):
 		return
