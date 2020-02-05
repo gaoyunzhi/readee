@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://www.douban.com/group/topic/163860647/',
+	'https://www.evernote.com/l/AO9Nsp2x2-5LBJCMbJvjQNK6zjezsttrIPw',
 ]
 
 def getFileName(url):
