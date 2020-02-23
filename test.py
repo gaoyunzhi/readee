@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://www.evernote.com/l/AO9Nsp2x2-5LBJCMbJvjQNK6zjezsttrIPw',
+	'https://www.nytimes.com/2020/02/23/us/politics/highlights-nevada-caucus.html',
 ]
 
 def getFileName(url):
