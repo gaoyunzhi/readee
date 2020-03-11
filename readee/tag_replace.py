@@ -26,15 +26,12 @@ def _tagReplace(soup, args = {}):
 			wrapper = fact().new_tag("p")
 			wrapper.append(_copyB(item))
 			item.replace_with(wrapper)
-	if not args.get('list_replace'):
+	if args.get('list_replace'):
 		to_remove_tags = [
 			soup.find_all("li"),
 			soup.find_all("ul")
 		]
 		for l in to_remove_tags:
 			for item in l:
-				new_item = fact().new_tag("p")
-				for x in item.find_all(recursive=False):
-					new_item.append(x)
-				item.replace_with(new_item)
+				item.name = p
 	return soup
