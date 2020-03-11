@@ -4,6 +4,8 @@
 name = 'readee'
 
 from .article import getArticle
+from bs4 import BeautifulSoup
+from hanziconv import HanziConv
 
 def _formaturl(url):
 	if '://' not in url:
@@ -14,4 +16,9 @@ def export(url, content=None, **args):
 	article = getArticle(url, content, args)
 	if not article.text or not article.text.strip():
 		raise Exception('Can not find main content')
+	if args.get('toSimplified'):
+		b = BeautifulSoup(str(article), 'html.parser')
+		for x in b.findAll(text=True):
+			x.replaceWith(HanziConv.toSimplified(x))
+		return b
 	return article
