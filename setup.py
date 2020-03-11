@@ -23,6 +23,7 @@ setuptools.setup(
         'readability-lxml',
         'telegram_util>=0.0.20',
         'hanziconv>=0.3.2',
+        'cached_url>=0.0.5',
     ],
     python_requires='>=3.0',
 )

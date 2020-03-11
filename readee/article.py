@@ -5,9 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 from readability import Document
 from .content import _findMain
-import hashlib
-import sys
-import os
+import cached_url
 
 TO_REMOVE = [
 	'跳到导航', 
@@ -33,32 +31,9 @@ def _trimWebpage(raw):
 		return raw[:index]
 	return raw
 
-def _getUrlContent(url):
-	headers = {
-		'method': 'GET',
-		'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
-		'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',
-	}
-	return requests.get(url, headers=headers).text
-
-def _cachedContent(url):
-	os.system('mkdir tmp > /dev/null 2>&1')
-	cache = 'tmp/' + hashlib.sha224(url.encode('utf-8')).hexdigest()[:10] + '.html'
-	try:
-		with open(cache) as f:
-			return f.read()
-	except:
-		content = _getUrlContent(url)
-		with open(cache, 'w') as f:
-			f.write(content)
-		return content
-
 def getArticle(url, content, args = {}):
 	if not content:
-		if 'test' in str(sys.argv):
-			content = _cachedContent(url)
-		else:
-			content = _getUrlContent(url)
+		content = cached_url.get(url)
 	soup = BeautifulSoup(_trimWebpage(content), 'html.parser')
 	article_url = _findUrl(url, soup) # may need to use
 	doc = Document(content)
