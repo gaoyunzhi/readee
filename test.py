@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://whogovernstw.org/2020/03/03/tiehchihchang1/',
+	'https://whogovernstw.org/2020/01/09/weitingyen16/',
 ]
 
 def getFileName(url):
@@ -33,4 +33,5 @@ def test():
 		if 'open' in str(sys.argv):
 			os.system('open ' + name + ' -g')
 
-test()
+if __name__=='__main__':
+	test()
