@@ -42,7 +42,7 @@ IMG_ATTRS = MORE_CERTAIN_IMG_ATTRS + ['src'] # people would put junk in src fiel
 def _getImgInsideFigure(figure, domain):
 	for raw_img in figure.find_all():
 		for attr in IMG_ATTRS:
-			if raw_img.get(attr):
+			if raw_img.get(attr) and not raw_img.get(attr).endswith('pdf'):
 				r = fact().new_tag("img", src = _formatImgUrl(raw_img[attr], domain))
 				if raw_img.get('title'):
 					r['title'] = raw_img.get('title')
