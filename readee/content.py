@@ -41,10 +41,11 @@ def _findMainFromSoup(soup, url, args = {}):
 	return soup
 
 def _findMain(soup, doc, url, args = {}):
+	print(soup)
 	result = _findMainFromSoup(soup, url, args)
 	if result and result.text and result.text.strip():
 		return result
-	result = _findMainFromSoup(BeautifulSoup(str(doc.content), features="html.parser"), url, args)
-	if result and result.text and result.text.strip():
-		return result
+	# result = _findMainFromSoup(BeautifulSoup(str(doc.content), features="html.parser"), url, args)
+	# if result and result.text and result.text.strip():
+	# 	return result
 	return doc.content()
