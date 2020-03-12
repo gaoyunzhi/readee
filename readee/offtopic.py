@@ -48,7 +48,7 @@ def _isOffTopic(attrs):
 	r = '\n'.join(r)
 	if matchKey(r, OFFTOPIC_ATT):
 		return True
-	if 'sidebar' in r and not matchKey(r, ['no-sidebar']):
+	if 'sidebar' in r and not matchKey(r, ['no-sidebar', 'one-sidebar']):
 		return True
 	if 'hidden' in r and not matchKey(r, ['lazy', 'false', 'label-hidden', 'rich_media_content', 'start']):
 		return True
