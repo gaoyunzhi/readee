@@ -50,7 +50,8 @@ def _isOffTopic(attrs):
 		return True
 	if 'sidebar' in r and not matchKey(r, ['no-sidebar', 'one-sidebar']):
 		return True
-	if 'hidden' in r and not matchKey(r, ['lazy', 'false', 'label-hidden', 'rich_media_content', 'start']):
+	if 'hidden' in r and not matchKey(r, ['lazy', 'false', 'label-hidden', 
+			'rich_media_content', 'start']):
 		return True
 	if 'copyright' in r and not 'and' in r:
 		return True
