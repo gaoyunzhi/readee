@@ -22,6 +22,7 @@ OFFTOPIC_ATT = [
 	'参考文献', '引用', '网页', 'printfooter', 'catlinks', 'footer', 'Post Bottom',
 	'ad-unit', 'box-ad', "class : ['tabs']", "class : ['hd']", 'NYT_BELOW_MAIN_CONTENT_REGION',
 	'NYT_TOP_BANNER_REGION', 'g-inlineguide', 'entry-meta-bar', 'extra-hatom-entry-title',
+	'list-unstyled'
 ]
 
 OFFTOPIC_CLASSES = ['ads']

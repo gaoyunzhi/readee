@@ -127,6 +127,8 @@ def _cleanupImages(soup, domain):
 			figure.append(caption)
 			raw_caption.decompose()
 		r = _cleanupFigure(figure, domain)
+		if len(img.text) > 500: # the sixth tone have a strange background img formatting
+			continue
 		if r: 
 			img.replace_with(r)
 		else:
