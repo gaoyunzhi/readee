@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="readee",
-    version="0.0.24",
+    version="0.0.25",
     author="Yunzhi Gao",
     author_email="gaoyunzhi@gmail.com",
     description="Library for export webpage to reader mode html.",
