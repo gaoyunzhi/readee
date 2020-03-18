@@ -18,12 +18,19 @@ OFFTOPIC_ATT = [
 	'adblocker', 'tagline', 'navbar', 'navmenu', 'topHeader', 'Post Bottom',
 	't_callout', 'add-interest', 'bb-newsletter', 'popover', 'toast', 'after-article', 
 	'submeta', 'rich-link__container', 'content__meta-container', 'mw-editsection',
-	'navigation', 'noprint', 'jump-to-nav', 'toctitle', 'reflist', 'contentSub',
+	'noprint', 'jump-to-nav', 'toctitle', 'reflist', 'contentSub',
 	'参考文献', '引用', '网页', 'printfooter', 'catlinks', 'footer', 'Post Bottom',
 	'ad-unit', 'box-ad', "class : ['tabs']", "class : ['hd']", 'NYT_BELOW_MAIN_CONTENT_REGION',
 	'NYT_TOP_BANNER_REGION', 'g-inlineguide', 'entry-meta-bar', 'extra-hatom-entry-title',
 	'list-unstyled'
 ]
+
+OFFTOPIC_ATT_WITH_EXCEPTION = {
+	'sidebar': ['no-sidebar', 'one-sidebar'],
+	'hidden': ['lazy', 'false', 'label-hidden', 'rich_media_content', 'start'],
+	'navigation': ['navigation-border-thin-decoration'],
+	'copyright': ['and'],
+}
 
 OFFTOPIC_CLASSES = ['ads']
 
@@ -40,32 +47,28 @@ P_AD_WORDS = [
 
 def _isOffTopic(attrs):
 	if not attrs:
-		return False
+		return 
 	r = []
 	for k, v in attrs.items():
 		if matchKey(k, ['href', 'src', 'url', 'alt', 'data', 'xmlns:fb']):
 			continue
 		r.append(str(k) + ' : ' + str(v))
 	r = '\n'.join(r)
-	if matchKey(r, OFFTOPIC_ATT):
-		return True
-	if 'sidebar' in r and not matchKey(r, ['no-sidebar', 'one-sidebar']):
-		return True
-	if 'hidden' in r and not matchKey(r, ['lazy', 'false', 'label-hidden', 
-			'rich_media_content', 'start']):
-		return True
-	if 'copyright' in r and not 'and' in r:
-		return True
-	return False
+	for att in OFFTOPIC_ATT:
+		if att in r:
+			return att
+	for att in OFFTOPIC_ATT_WITH_EXCEPTION:
+		if att in r and not matchKey(r, OFFTOPIC_ATT_WITH_EXCEPTION[att]):
+			return att
+	return 
 
 def _decompose(item):
 	if 'offtopic' in str(sys.argv) and item.text and len(item.text) > 500:
 		print('decomposing long text: ', item.attrs)
 		if item.name in OFFTOPIC_TAG:
 			print(item.name)
-		for att in OFFTOPIC_ATT:
-			if att in str(item.attrs):
-				print(att)
+		if _isOffTopic(item.attrs):
+			print(_isOffTopic(item.attrs))
 	item.decompose()
 
 def _decompseAds(soup):
