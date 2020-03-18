@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://www.newyorker.com/magazine/2020/03/16/the-peace-corps-breaks-ties-with-china'
+	'https://matters.news/@HollowErhu/matters%E7%A4%BE%E5%8D%80%E6%B4%BB%E5%8B%95%E6%8F%90%E6%A1%88-%E6%88%91%E5%B9%B3%E5%B8%B8%E9%83%BD%E7%9C%8B%E4%BB%80%E9%BA%BC%E6%9B%B8-%E5%BE%B5%E6%96%87%E6%B4%BB%E5%8B%95-bafyreibzedplnny5aagm3sw66bj3n6wtozj7ndq53ol5mkhfp2qtmmshza'
 ]
 
 def getFileName(url):

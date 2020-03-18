@@ -25,6 +25,7 @@ def _getInnerArticle_(soup):
 		lambda x: x.find("div", class_ = "article"),
 		lambda x: x.find("div", class_ = "field-name-body"),
 		lambda x: x.find("div", class_ = "content"),
+		lambda x: x.find("div", class_ = "u-content"),
 	]
 	is_short = matchKey(soup.text, SHORT_ARTICLE)
 	text_limit = 150 if is_short else 500
