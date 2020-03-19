@@ -29,7 +29,7 @@ def _findMainFromSoup(soup, url, args = {}):
 	saveSoup(soup, 2)
 	soup = _cleanupImages(soup, domain)
 	saveSoup(soup, 3)
-	soup, before_content = _getInnerArticle(soup)
+	soup, before_content = _getInnerArticle(soup, domain)
 	saveSoup(soup, 4)
 	soup = _tagReplace(soup)
 	saveSoup(soup, 5)
