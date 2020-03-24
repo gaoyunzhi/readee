@@ -35,8 +35,8 @@ OFFTOPIC_ATT_WITH_EXCEPTION = {
 OFFTOPIC_CLASSES = ['ads']
 
 DIV_AD_WORDS = [
-	'《纽约时报》推出每日中文简报',
-	'订阅《纽约时报》中文简报',
+	'中文简报',
+	'@nytimes'
 ]
 
 P_AD_WORDS = [
