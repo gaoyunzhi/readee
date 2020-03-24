@@ -13,15 +13,6 @@ TO_REMOVE = [
 	'Skip to main content'
 ]
 
-def _findUrl(url, soup):
-	if 'telegra.ph' not in url:
-		return
-	address = soup.find('address')
-	if not address:
-		return
-	link = address.find('a')
-	return link and link.get('href')
-
 def _trimWebpage(raw):
 	for to_remove in TO_REMOVE:
 		raw = raw.replace(to_remove, '')
@@ -35,7 +26,6 @@ def getArticle(url, content, args = {}):
 	if not content:
 		content = cached_url.get(url)
 	soup = BeautifulSoup(_trimWebpage(content), 'html.parser')
-	article_url = _findUrl(url, soup) # may need to use
 	doc = Document(content)
 	return _findMain(soup, doc, url, args)
 

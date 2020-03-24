@@ -18,30 +18,3 @@ def _finalTouch(soup, url):
 		if item.text == 'Follow TranscendingSelf and support their Fundraiser!':
 			item.decompose()
 	return soup
-
-def _findFigure(soup, before_content):
-	figure = soup.find('figure')
-	if figure:
-		html = str(soup)
-		pre_content = BeautifulSoup(html[:html.find('<figure')], features="html.parser")
-		if len(pre_content.text) < 200:
-			return figure
-	if not before_content:
-		return 
-	before_content = BeautifulSoup(before_content, features="html.parser")
-	figures = before_content.find_all('figure')
-	if 'douban' in str(before_content):
-		return
-	if len(list(figures)) == 1:
-		return figures[0]
-	if 'telegraph.co.uk' in str(before_content):
-		return figures[-1]
-
-def _moveHeadPhoto(soup, before_content):
-	figure = _findFigure(soup, before_content)
-	if not figure:
-		return
-	soup.insert(0, _copyB(figure))
-	figure.decompose()
-
-

@@ -14,7 +14,6 @@ optional args:
 - list_replace: will replace list, usually for telegraph export
 - preserve_link: keep links
 - include_title: keep title
-- move_head_photo: try move head photo to top
 
 
 ## how to install

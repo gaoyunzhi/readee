@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://matters.news/@bash99/%E5%86%85%E5%AE%B9%E7%A4%BE%E5%8C%BA%E6%98%AF%E5%90%A6%E4%B8%A2%E5%A4%B1%E4%BA%86%E8%AE%BA%E5%9D%9B%E7%9A%84%E6%9F%90%E4%BA%9B%E4%BC%98%E7%82%B9-bafyreifeow5eax7al6kzc62tfayg7eat6o3vgrlnhojbofhn7ldltjdzw4'
+	'https://cn.nytimes.com/usa/20200324/coronavirus-asian-americans-attacks/?utm_source=news-list&utm_medium=email&utm_campaign=newsletter'
 ]
 
 def getFileName(url):
@@ -28,7 +28,7 @@ def test():
 		print('原文：', url)
 		name = getFileName(url)
 		with open(name, 'w') as f:
-			f.write(str(readee.export(url, include_title=True, move_head_photo=True, toSimplified=True)))
+			f.write(str(readee.export(url, include_title=True, toSimplified=True)))
 		print('导出：', name)
 		if 'open' in str(sys.argv):
 			os.system('open ' + name + ' -g')
