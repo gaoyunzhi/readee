@@ -89,7 +89,7 @@ def _decomposeOfftopic(soup, url, args = {}):
 		for item in soup.find_all(class_=c):
 			_decompose(item)
 
-	if not matchKey(url, ['medium']) and not args.get('include_title'):
+	if not matchKey(url, ['medium']):
 		for item in soup.find_all('h1'):
 			_decompose(item)
 
