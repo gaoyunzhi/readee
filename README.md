@@ -12,7 +12,6 @@ beautiful_soup_html = readee.export(url = webpage_url)
 optional args:
 - content: raw webpage, will skip url fetching
 - list_replace: will replace list, usually for telegraph export
-- preserve_link: keep links
 - include_title: keep title
 
 
