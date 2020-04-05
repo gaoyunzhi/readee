@@ -20,6 +20,7 @@ def _tagReplace(soup, args = {}):
 	wrap_with_p = [
 		soup.find_all("div", class_="article-paragraph"),
 		soup.find_all("section"),
+		[x for x in soup.children if isinstance(x, str)],
 	]
 	for l in wrap_with_p:
 		for item in l:
