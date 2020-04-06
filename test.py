@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://medium.com/@moreless/%E4%BB%8E%E6%94%BB%E5%A3%B3%E6%9C%BA%E5%8A%A8%E9%98%9F%E7%9C%8B%E4%B8%BA%E4%BA%86%E8%AE%A1%E7%AE%97%E6%9C%BAio%E5%8F%91%E5%B1%95%E7%9A%84%E6%96%B9%E5%90%91-e923d2368541'
+	'https://www.douban.com/note/756689087'
 ]
 
 def getFileName(url):

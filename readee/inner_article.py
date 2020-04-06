@@ -20,7 +20,6 @@ def _getInnerArticle_(soup, domain):
 		lambda x: x.find("div", class_ = "post-text"),
 		lambda x: x.find("div", {"id" : "bodyContent"}),
 		lambda x: x.find("div", {"id" : "content_JS"}),
-		lambda x: x.find("div", {"id" : "link-report"}),
 		lambda x: x.find("div", class_ = "main-post"),
 		lambda x: x.find("div", class_ = "article"),
 		lambda x: x.find("div", class_ = "field-name-body"),
@@ -30,6 +29,8 @@ def _getInnerArticle_(soup, domain):
 	]
 	domain_specific_applicators = {
 		'matters': lambda x: x.find("div", class_ = "u-content"),
+		'douban': lambda x: x.find("div", {"id" : "link-report"}),
+		'douban': lambda x: x.find("div", class_ = "note"),
 	}
 	is_short = matchKey(soup.text, SHORT_ARTICLE)
 	text_limit = 150 if is_short else 500
