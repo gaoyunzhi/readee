@@ -30,7 +30,7 @@ def _getInnerArticle_(soup, domain):
 	domain_specific_applicators = {
 		'matters': lambda x: x.find("div", class_ = "u-content"),
 		'douban': lambda x: x.find("div", {"id" : "link-report"}),
-		'douban': lambda x: x.find("div", class_ = "note"),
+		'douban.com/note': lambda x: x.find("div", class_ = "note"),
 	}
 	is_short = matchKey(soup.text, SHORT_ARTICLE)
 	text_limit = 150 if is_short else 500
