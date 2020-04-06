@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from .common import _copyB, fact
+from bs4 import BeautifulSoup
 
 def _tagReplace(soup, args = {}):
 	wrap_with_i = [
@@ -27,6 +28,13 @@ def _tagReplace(soup, args = {}):
 			wrapper = fact().new_tag("p")
 			wrapper.append(_copyB(item))
 			item.replace_with(wrapper)
+	for l in soup.find_all("p"):
+		children = list(l.children)
+		if len(children) != 1:
+			continue
+		if isinstance(children[0], str):
+			paragraphs = ''.join(['<p>%s</p>' % x for x in children[0].split('\n\n')])
+			children[0].replace_with(BeautifulSoup("<p>%s</p>" % paragraphs, features="lxml"))
 	if args.get('list_replace'):
 		to_remove_tags = [
 			soup.find_all("li"),
