@@ -32,10 +32,15 @@ def _tagReplace(soup, args = {}):
 		children = list(l.children)
 		if len(children) != 1 or not isinstance(children[0], str):
 			continue
+		to_replace = None
 		if l.parent.name != 'blockquote': # douban status specific
+			to_replace = l.parent
+		if 'review-content' in str(l.parent.attrs): # douban reviews specific
+			to_replace = l
+		if not to_replace:
 			continue
 		paragraphs = ''.join(['<p>%s</p>' % x for x in children[0].split('\n\n')])
-		l.parent.replace_with(BeautifulSoup("<p>%s</p>" % paragraphs, features="lxml"))
+		to_replace.replace_with(BeautifulSoup("<p>%s</p>" % paragraphs, features="lxml"))
 	if args.get('list_replace'):
 		to_remove_tags = [
 			soup.find_all("li"),

@@ -28,10 +28,11 @@ def _getInnerArticle_(soup, domain):
 		lambda x: x.find("div", class_ = "news_txt"),
 	]
 	domain_specific_applicators = {
-		'matters': lambda x: x.find("div", class_ = "u-content"),
-		'douban': lambda x: x.find("div", {"id" : "link-report"}),
-		'douban.com/note': lambda x: x.find("div", class_ = "note"),
-		'douban.com/review': lambda x: x.find("div", class_ = "review-content"),
+		'matters': [lambda x: x.find("div", class_ = "u-content")],
+		'douban': [
+			lambda x: x.find("div", {"id" : "link-report"}),
+			lambda x: x.find("div", class_ = "note"),
+			lambda x: x.find("div", class_ = "review-content"),]
 	}
 	is_short = matchKey(soup.text, SHORT_ARTICLE)
 	text_limit = 150 if is_short else 500
@@ -39,11 +40,12 @@ def _getInnerArticle_(soup, domain):
 		candidate = applicator(soup)
 		if _seemsValidRawArticle(candidate, text_limit = text_limit):
 			soup = candidate
-	for d, applicator in domain_specific_applicators.items():
+	for d, applicators in domain_specific_applicators.items():
 		if d in domain:
-			candidate = applicator(soup)
-			if candidate:
-				soup = candidate
+			for applicator in applicators:
+				candidate = applicator(soup)
+				if candidate:
+					soup = candidate
 	return soup
 
 def _getInnerArticle(soup, domain):
