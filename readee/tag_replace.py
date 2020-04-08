@@ -33,7 +33,7 @@ def _tagReplace(soup, args = {}):
 		if len(children) != 1 or not isinstance(children[0], str):
 			continue
 		to_replace = None
-		if l.parent.name != 'blockquote': # douban status specific
+		if l.parent.name == 'blockquote': # douban status specific
 			to_replace = l.parent
 		if 'review-content' in str(l.parent.attrs): # douban reviews specific
 			to_replace = l
