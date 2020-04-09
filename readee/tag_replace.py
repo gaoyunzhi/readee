@@ -3,6 +3,7 @@
 
 from .common import _copyB, fact
 from bs4 import BeautifulSoup
+from telegram_util import matchKey
 
 def _tagReplace(soup, args = {}):
 	wrap_with_i = [
@@ -35,11 +36,12 @@ def _tagReplace(soup, args = {}):
 		to_replace = None
 		if l.parent.name == 'blockquote': # douban status specific
 			to_replace = l.parent
-		if 'review-content' in str(l.parent.attrs): # douban reviews specific
+		if matchKey(str(l.parent.attrs), ['review-content', 'note']): # douban reviews.notes specific
 			to_replace = l
 		if not to_replace:
 			continue
-		paragraphs = ''.join(['<p>%s</p>' % x for x in children[0].split('\n\n')])
+		paragraphs = ''.join(['<p>%s</p>' % x for x in children[0].split('\n') 
+			if x.strip()])
 		to_replace.replace_with(BeautifulSoup("<p>%s</p>" % paragraphs, features="lxml"))
 	if args.get('list_replace'):
 		to_remove_tags = [
