@@ -31,7 +31,7 @@ def _getInnerArticle_(soup, domain):
 		'douban': [
 			lambda x: x.find("div", {"id" : "link-report"}),
 			lambda x: x.find("div", class_ = "note"),
-			lambda x: x.find("div", class_ = "review-content"),]
+			lambda x: x.find("div", class_ = "review-content"),],
 		'thepaper': [lambda x: x.find("div", class_ = "news_txt")]
 	}
 	is_short = matchKey(soup.text, SHORT_ARTICLE)
