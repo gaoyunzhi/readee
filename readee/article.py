@@ -16,10 +16,10 @@ TO_REMOVE = [
 def _trimWebpage(raw):
 	for to_remove in TO_REMOVE:
 		raw = raw.replace(to_remove, '')
-	anchor = '<!-- detail_toolbox -->'
-	index = raw.find(anchor)
-	if index != -1:
-		return raw[:index]
+	for anchor in ['<!-- detail_toolbox -->', '<!--article_adlist']:
+		index = raw.find(anchor)
+		if index != -1:
+			raw = raw[:index]
 	return raw
 
 def getArticle(url, content, args = {}):
