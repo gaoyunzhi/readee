@@ -13,7 +13,7 @@ def getFileName(url):
 	os.system('mkdir result > /dev/null 2>&1')
 	name = [x for x in url.split('/') if x][-1]
 	name = [x for x in name.split('.') if x][0]
-	return 'result/%s.html' % name
+	return 'result/%s.html' % name[:20]
 
 def test():
 	if len(sys.argv) > 1:
