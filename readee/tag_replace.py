@@ -38,7 +38,7 @@ def _tagReplace(soup, args = {}):
 			to_replace = l.parent
 		if matchKey(str(l.parent.attrs), ['review-content', 'note']): # douban reviews.notes specific
 			to_replace = l
-		if not to_replace:
+		if not to_replace or len(list(to_replace.children)) != 1:
 			continue
 		paragraphs = ''.join(['<p>%s</p>' % x for x in children[0].split('\n') 
 			if x.strip()])
