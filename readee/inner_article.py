@@ -25,8 +25,10 @@ def _getInnerArticle_(soup, domain):
 		lambda x: x.find("div", class_ = "field-name-body"),
 		lambda x: x.find("div", class_ = "content"),
 		lambda x: x.find("div", class_ = "u-content"),
+		lambda x: x.find("div", class_ = "RichContent-inner"),
 	]
 	domain_specific_applicators = {
+		'': [lambda x: x.find("body")],
 		'matters': [lambda x: x.find("div", class_ = "u-content")],
 		'douban': [
 			lambda x: x.find("div", {"id" : "link-report"}),
