@@ -4,6 +4,7 @@
 from telegram_util import matchKey
 from .common import fact, _wrap
 from .images import _yieldPossibleImg
+from bs4 import Comment
 import sys
 
 OFFTOPIC_TAG = ['small', 'address', 'meta', 'script', 'sup']
@@ -22,11 +23,11 @@ OFFTOPIC_ATT = [
 	'参考文献', '引用', '网页', 'printfooter', 'catlinks', 'footer', 'Post Bottom',
 	'ad-unit', 'box-ad', "class : ['tabs']", "class : ['hd']", 'NYT_BELOW_MAIN_CONTENT_REGION',
 	'NYT_TOP_BANNER_REGION', 'g-inlineguide', 'entry-meta-bar', 'extra-hatom-entry-title',
-	'list-unstyled', 'hide_word'
+	'list-unstyled', 'hide_word', 'single-header', 'post-pagination'
 ]
 
 OFFTOPIC_ATT_WITH_EXCEPTION = {
-	'sidebar': ['no-sidebar', 'one-sidebar'],
+	'sidebar': ['no-sidebar', 'one-sidebar', 'penci-main'],
 	'hidden': ['lazy', 'false', 'label-hidden', 'rich_media_content', 'start', 'overflow'],
 	'navigation': ['navigation-border-thin-decoration'],
 	'copyright': ['and'],
@@ -64,7 +65,7 @@ def _isOffTopic(attrs):
 
 def _decompose(item):
 	if 'offtopic' in str(sys.argv) and item.text and len(item.text) > 500:
-		print('decomposing long text: ', item.attrs)
+		print('decomposing long text: ', item.attrs, ' '.join(item.text[:100].split()))
 		if item.name in OFFTOPIC_TAG:
 			print(item.name)
 		if _isOffTopic(item.attrs):
@@ -94,6 +95,9 @@ def _decomposeOfftopic(soup, url, args = {}):
 			_decompose(item)
 
 	_decompseAds(soup)
+
+	for item in soup.find_all(string=lambda text: isinstance(text, Comment)):
+		item.extract()
 
 	for item in soup.find_all("header"):
 		s = item.find("p", {"id": "article-summary"})
