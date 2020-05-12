@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="readee",
-    version="0.0.47",
+    version="0.0.48",
     author="Yunzhi Gao",
     author_email="gaoyunzhi@gmail.com",
     description="Library for export webpage to reader mode html.",
@@ -22,7 +22,7 @@ setuptools.setup(
         'bs4',
         'readability-lxml',
         'telegram_util',
-        'hanziconv',
+        'opencc-python-reimplemented',
         'cached_url',
     ],
     python_requires='>=3.0',

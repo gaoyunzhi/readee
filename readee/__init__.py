@@ -5,7 +5,9 @@ name = 'readee'
 
 from .article import getArticle
 from bs4 import BeautifulSoup
-from hanziconv import HanziConv
+from opencc import OpenCC
+
+cc = OpenCC('tw2sp')
 
 def _formaturl(url):
 	if '://' not in url:
@@ -19,6 +21,6 @@ def export(url, content=None, **args):
 	if args.get('toSimplified'):
 		b = BeautifulSoup(str(article), 'html.parser')
 		for x in b.findAll(text=True):
-			x.replaceWith(HanziConv.toSimplified(x))
+			x.replaceWith(cc.convert(x))
 		return b
 	return article
