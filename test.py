@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://www.unitas.me/?p=13674'
+	'https://mp.weixin.qq.com/s?src=11&timestamp=1589384869&ver=2336&signature=sTeeoWaZ2MzuU6mNg5iC*5iZbXBQJLcsg1mnnBX*2tjQkLJUzWAQVlgM7ZwuZNyqmT3RuNpxoqnnonX-X8Jl6RQK008PWGQqq70XvQC9A*v6BMyH5OKKdIq3ue0msJJo&new=1'
 ]
 
 def getFileName(url):
@@ -28,7 +28,7 @@ def test():
 		print('原文：', url)
 		name = getFileName(url)
 		with open(name, 'w') as f:
-			f.write(str(readee.export(url, toSimplified=True)))
+			f.write(str(readee.export(url, toSimplified=False)))
 		print('导出：', name)
 		if 'open' in str(sys.argv):
 			os.system('open ' + name + ' -g')
