@@ -24,7 +24,7 @@ OFFTOPIC_ATT = [
 	'ad-unit', 'box-ad', "class : ['tabs']", "class : ['hd']", 'NYT_BELOW_MAIN_CONTENT_REGION',
 	'NYT_TOP_BANNER_REGION', 'g-inlineguide', 'entry-meta-bar', 'extra-hatom-entry-title',
 	'list-unstyled', 'hide_word', 'single-header', 'post-pagination',
-	'weui-dialog',
+	'weui-dialog', 'post-title'
 ]
 
 OFFTOPIC_ATT_WITH_EXCEPTION = {
