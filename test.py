@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://squatting2047.com/%e5%a7%bf%e6%85%8b%e5%95%8f%e9%a1%8c/'
+	'https://catalystmagazine.net/this-time-they-can-see-our-pain'
 ]
 
 def getFileName(url):

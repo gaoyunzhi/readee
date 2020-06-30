@@ -10,7 +10,7 @@ import sys
 OFFTOPIC_TAG = ['small', 'address', 'meta', 'script', 'sup']
 
 OFFTOPIC_ATT = [
-	'social', 'comment', 'latest', 'more', 'button', 'facebook', 
+	'comment', 'latest', 'more', 'button', 'facebook', 
 	'cn-carousel-medium-strip', 'video__end-slate__top-wrapper', 'metadata', 
 	'el__article--embed', 'signup', 'related', 'disclaimer', 'off-screen', 
 	'story-body__unordered-list', 'story-image-copyright', 'article-header', 
@@ -24,7 +24,7 @@ OFFTOPIC_ATT = [
 	'ad-unit', 'box-ad', "class : ['tabs']", "class : ['hd']", 'NYT_BELOW_MAIN_CONTENT_REGION',
 	'NYT_TOP_BANNER_REGION', 'g-inlineguide', 'entry-meta-bar', 'extra-hatom-entry-title',
 	'list-unstyled', 'hide_word', 'single-header', 'post-pagination',
-	'weui-dialog', 'post-title'
+	'weui-dialog', 'post-title', 'post-topic', 'byline-date'
 ]
 
 OFFTOPIC_ATT_WITH_EXCEPTION = {
