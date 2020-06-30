@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://jacobinmag.com/2020/06/sheila-rowbotham-gabriel-winant-british-socialist-feminism'
+	'https://theinitium.com/article/20170405-opinion-xian-altright/'
 ]
 
 def getFileName(url):
@@ -16,22 +16,13 @@ def getFileName(url):
 	return 'result/%s.html' % name[:20]
 
 def test():
-	if len(sys.argv) > 1:
-		mode = sys.argv[1]
-	else:
-		mode = ''
-	if mode == 'open':
-		mode = ''
 	for url in urls:
-		if not mode in url:
-			continue
 		print('原文：', url)
 		name = getFileName(url)
 		with open(name, 'w') as f:
 			f.write(str(readee.export(url, toSimplified=False)))
 		print('导出：', name)
-		if 'open' in str(sys.argv):
-			os.system('open ' + name + ' -g')
+		os.system('open ' + name + ' -g')
 
 if __name__=='__main__':
 	test()
