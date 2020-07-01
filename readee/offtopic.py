@@ -10,7 +10,7 @@ import sys
 OFFTOPIC_TAG = ['small', 'address', 'meta', 'script', 'sup']
 
 OFFTOPIC_ATT = [
-	'latest', 'more', 'button', 'facebook', 
+	'latest', 'more', 'button', 'facebook',
 	'cn-carousel-medium-strip', 'video__end-slate__top-wrapper', 'metadata', 
 	'el__article--embed', 'signup', 'related', 'disclaimer', 'off-screen', 
 	'story-body__unordered-list', 'story-image-copyright', 'article-header', 
@@ -84,7 +84,7 @@ def _decompseAds(soup):
 			_decompose(item)
 
 def _decomposeOfftopic(soup, url, args = {}):
-	for item in soup.find_all():
+	for item in list(soup.find_all())[1:]:
 		if _isOffTopic(item.attrs) or \
 			item.name in OFFTOPIC_TAG:
 			_decompose(item)
