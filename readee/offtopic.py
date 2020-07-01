@@ -24,7 +24,8 @@ OFFTOPIC_ATT = [
 	'ad-unit', 'box-ad', "class : ['tabs']", "class : ['hd']", 'NYT_BELOW_MAIN_CONTENT_REGION',
 	'NYT_TOP_BANNER_REGION', 'g-inlineguide', 'entry-meta-bar', 'extra-hatom-entry-title',
 	'list-unstyled', 'hide_word', 'single-header', 'post-pagination',
-	'weui-dialog', 'post-title', 'post-topic', 'byline-date'
+	'weui-dialog', 'post-title', 'post-topic', 'byline-date', 'post-print',
+	'mailing-list-popup', 'taxonomies', 'authors'
 ]
 
 OFFTOPIC_ATT_WITH_EXCEPTION = {
@@ -45,6 +46,7 @@ P_AD_WORDS = [
 	'The Times is committed', 
 	'Follow The New York Times',
 	'Love HuffPost',
+	'discounted subscription today'
 ]
 
 def _isOffTopic(attrs):
