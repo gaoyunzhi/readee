@@ -16,7 +16,7 @@ OFFTOPIC_ATT = [
 	'story-body__unordered-list', 'story-image-copyright', 'article-header', 
 	'top-wrapper', 'bottom-of-article', 'bottom-wrapper', 'linkList', 
 	'display:none;', 'accordion', 'el-editorial-source', 'video__end-slate__tertiary-title',
-	'adblocker', 'tagline', 'navbar', 'navmenu', 'topHeader', 'Post Bottom',
+	'adblocker', 'tagline', 'navmenu', 'topHeader', 'Post Bottom',
 	't_callout', 'add-interest', 'bb-newsletter', 'popover', 'toast', 'after-article', 
 	'submeta', 'rich-link__container', 'content__meta-container', 'mw-editsection',
 	'noprint', 'jump-to-nav', 'toctitle', 'reflist', 'contentSub',
@@ -33,6 +33,7 @@ OFFTOPIC_ATT_WITH_EXCEPTION = {
 	'hidden': ['lazy', 'false', 'label-hidden', 'rich_media_content', 'start', 'overflow'],
 	'navigation': ['navigation-border-thin-decoration'],
 	'copyright': ['and'],
+	'navbar': ['single-post']
 }
 
 OFFTOPIC_CLASSES = ['ads']

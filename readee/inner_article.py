@@ -14,6 +14,7 @@ def _seemsValidRawArticle(soup, text_limit = 500):
 def _getInnerArticle_(soup, domain):	
 	applicators = [
 		lambda x: x.find("article"),
+		lambda x: x.find("article"),
 		lambda x: x.find("div", {"id" : "js_content"}),
 		lambda x: x.find("div", class_ = "story-body__inner"),
 		lambda x: x.find("div", class_ = "answercell"),
