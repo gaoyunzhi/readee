@@ -40,7 +40,8 @@ OFFTOPIC_CLASSES = ['ads']
 
 DIV_AD_WORDS = [
 	'中文简报',
-	'@nytimes'
+	'@nytimes',
+	'NYT简报',
 ]
 
 P_AD_WORDS = [
