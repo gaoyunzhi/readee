@@ -25,7 +25,7 @@ OFFTOPIC_ATT = [
 	'NYT_TOP_BANNER_REGION', 'g-inlineguide', 'entry-meta-bar', 'extra-hatom-entry-title',
 	'list-unstyled', 'hide_word', 'single-header', 'post-pagination',
 	'weui-dialog', 'post-title', 'post-topic', 'byline-date', 'post-print',
-	'mailing-list-popup', 'taxonomies', 'authors'
+	'mailing-list-popup', 'taxonomies', 'authors', 'interactive-content'
 ]
 
 OFFTOPIC_ATT_WITH_EXCEPTION = {
