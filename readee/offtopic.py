@@ -49,7 +49,8 @@ P_AD_WORDS = [
 	'The Times is committed', 
 	'Follow The New York Times',
 	'Love HuffPost',
-	'discounted subscription today'
+	'discounted subscription today',
+	'Just follow this link',
 ]
 
 def _isOffTopic(attrs):
