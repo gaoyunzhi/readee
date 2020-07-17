@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://jacobinmag.com/2020/07/iraq-war-blowback-podcast-bush-rumsfeld-bremer'
+	'https://chinaworker.info/cn/2020/07/08/24235/'
 ]
 
 def getFileName(url):

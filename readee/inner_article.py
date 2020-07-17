@@ -29,6 +29,7 @@ def _getInnerArticle_(soup, domain):
 		lambda x: x.find("div", class_ = "RichContent-inner"),
 		lambda x: x.find("div", class_ = "entry-content"),
 		lambda x: x.find("main", class_ = 'main-content'),
+		lambda x: x.find("div", class_ = 'pf-content'),
 	]
 	domain_specific_applicators = {
 		'': [lambda x: x.find("body")],
@@ -43,6 +44,7 @@ def _getInnerArticle_(soup, domain):
 			lambda x: x.find('div', class_ = 'news_part')],
 		'gravitysworm': [lambda x: x.find("div", class_ = "copy")],
 		'opinion.cw.com.tw': [lambda x: x.find("article"),],
+		'chinaworker.': [lambda x: x.find("div", class_ = 'pf-content'),]
 	}
 	is_short = matchKey(soup.text, SHORT_ARTICLE)
 	text_limit = 150 if is_short else 500
