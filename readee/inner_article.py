@@ -30,6 +30,7 @@ def _getInnerArticle_(soup, domain):
 		lambda x: x.find("div", class_ = "entry-content"),
 		lambda x: x.find("main", class_ = 'main-content'),
 		lambda x: x.find("div", class_ = 'pf-content'),
+		lambda x: x.find("div", class_ = 'pn-single-post-wrapper__content'),
 	]
 	domain_specific_applicators = {
 		'': [lambda x: x.find("body")],

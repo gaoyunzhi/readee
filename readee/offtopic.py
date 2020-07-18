@@ -26,7 +26,7 @@ OFFTOPIC_ATT = [
 	'list-unstyled', 'hide_word', 'single-header', 'post-pagination',
 	'weui-dialog', 'post-title', 'post-topic', 'byline-date', 'post-print',
 	'mailing-list-popup', 'taxonomies', 'authors', 'interactive-content',
-	'socialBTN', 'page-view',
+	'socialBTN', 'page-view', 'pn-single-post-wrapper__social'
 ]
 
 OFFTOPIC_ATT_WITH_EXCEPTION = {
