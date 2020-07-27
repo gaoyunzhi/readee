@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'http://zhishifenzi.com/depth/depth/9430.html'
+	'https://chinadigitaltimes.net/chinese/2016/11/%E6%B3%95%E6%84%8F%E7%BC%96%E8%AF%91-%E9%A9%AC%E5%85%8B%E2%80%A2%E9%87%8C%E6%8B%89%EF%BC%9A%E8%BA%AB%E4%BB%BD%E8%87%AA%E7%94%B1%E4%B8%BB%E4%B9%89%E7%9A%84%E7%BB%88%E7%BB%93/'
 ]
 
 def getFileName(url):
