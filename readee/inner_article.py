@@ -48,7 +48,8 @@ def _getInnerArticle_(soup, domain):
 		'gravitysworm': [lambda x: x.find("div", class_ = "copy")],
 		'opinion.cw.com.tw': [lambda x: x.find("article"),],
 		'chinaworker.': [lambda x: x.find("div", class_ = 'pf-content'),],
-		'thesocietypages.org': [lambda x: x.find("div", class_ = 'post-content'),]
+		'thesocietypages.org': [lambda x: x.find("div", class_ = 'post-content'),],
+		'chinadigitaltimes.org': [lambda x: x.find("div", class_ = 'post-content'),],
 	}
 	is_short = matchKey(soup.text, SHORT_ARTICLE)
 	text_limit = 150 if is_short else 500

@@ -30,7 +30,7 @@ OFFTOPIC_ATT = [
 ]
 
 OFFTOPIC_ATT_WITH_EXCEPTION = {
-	'sidebar': ['no-sidebar', 'one-sidebar', 'penci-main', 'id : page'],
+	'sidebar': ['no-sidebar', 'one-sidebar', 'penci-main', 'id : page', 'single-post'],
 	'hidden': ['lazy', 'false', 'label-hidden', 'rich_media_content', 'start', 'overflow'],
 	'navigation': ['navigation-border-thin-decoration'],
 	'copyright': ['and'],
