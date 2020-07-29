@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://www.feministcurrent.com/2019/04/26/interview-women-of-colour-speak-out-against-prostitution/'
+	'https://mp.weixin.qq.com/s/Rgx5IIHhep6pTgA57OkMjg'
 ]
 
 def getFileName(url):
