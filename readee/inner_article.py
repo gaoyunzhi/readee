@@ -15,10 +15,8 @@ def _getInnerArticle_(soup, domain):
 	applicators = [
 		lambda x: x.find("article"),
 		lambda x: x.find("article"),
+		lambda x: x.find("main"),
 		lambda x: x.find("div", {"id" : "js_content"}),
-		lambda x: x.find("div", class_ = "story-body__inner"),
-		lambda x: x.find("div", class_ = "answercell"),
-		lambda x: x.find("div", class_ = "post-text"),
 		lambda x: x.find("div", {"id" : "bodyContent"}),
 		lambda x: x.find("div", {"id" : "content_JS"}),
 		lambda x: x.find("div", class_ = "main-post"),
@@ -28,11 +26,14 @@ def _getInnerArticle_(soup, domain):
 		lambda x: x.find("div", class_ = "u-content"),
 		lambda x: x.find("div", class_ = "RichContent-inner"),
 		lambda x: x.find("div", class_ = "entry-content"),
-		lambda x: x.find("main", class_ = 'main-content'),
 		lambda x: x.find("div", class_ = 'pf-content'),
 		lambda x: x.find("div", class_ = 'pn-single-post-wrapper__content'),
 		lambda x: x.find("div", class_ = 'post-content'),
 		lambda x: x.find("div", class_ = 'inner_content'),
+		lambda x: x.find("div", class_ = 'content_wrapper'),
+		lambda x: x.find("div", class_ = "story-body__inner"),
+		lambda x: x.find("div", class_ = "answercell"),
+		lambda x: x.find("div", class_ = "post-text"),
 	]
 	domain_specific_applicators = {
 		'': [lambda x: x.find("body")],
