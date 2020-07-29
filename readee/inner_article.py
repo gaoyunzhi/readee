@@ -19,6 +19,7 @@ def _getInnerArticle_(soup, domain):
 		lambda x: x.find("div", {"id" : "js_content"}),
 		lambda x: x.find("div", {"id" : "bodyContent"}),
 		lambda x: x.find("div", {"id" : "content_JS"}),
+		# lambda x: x.find("div", {"id" : "article-body"}),
 		lambda x: x.find("div", class_ = "main-post"),
 		lambda x: x.find("div", class_ = "article"),
 		lambda x: x.find("div", class_ = "field-name-body"),
