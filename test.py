@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://www.twreporter.org/a/sanyeong-factory-thai-migrant-worker-occupational-accidents-suicide'
+	'http://cnpolitics.org/2020/07/active-defense-chinas-military-strategy-since-1949/'
 ]
 
 def getFileName(url):
