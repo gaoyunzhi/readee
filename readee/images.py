@@ -5,10 +5,18 @@ import re
 from .common import fact, _copyB
 from telegram_util import matchKey
 
-def _getCaption(item):
+def isCaption(item):
 	if not item:
+		return False
+	return 'caption' in str(item.attrs).lower() and item.name != 'img'
+
+def _getCaption(item):
+	if isCaption(item.find_next()):
+		return item.find_next()
+	parent = item.parent
+	if not parent:
 		return
-	for x in item.find_all():
+	for x in parent.find_all():
 		if 'caption' in str(x.attrs).lower() and x.name != 'img':
 			return x
 
@@ -116,7 +124,7 @@ def _cleanupImages(soup, domain):
 		if not img.parent:
 			img.decompose()
 			continue
-		raw_caption = _getCaption(img.parent)
+		raw_caption = _getCaption(img)
 		if raw_caption:
 			caption = fact().new_tag("figcaption")
 			caption.append(_copyB(raw_caption))
