@@ -36,7 +36,7 @@ def _formatImgUrl(raw, domain):
 		return domain + raw
 	return raw
 
-MORE_CERTAIN_IMG_ATTRS = ['data-src-large', 'data-src']
+MORE_CERTAIN_IMG_ATTRS = ['data-src-large', 'data-src', 'data-original-src']
 IMG_ATTRS = MORE_CERTAIN_IMG_ATTRS + ['src'] # people would put junk in src field
 
 def _getImgInsideFigure(figure, domain):

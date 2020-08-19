@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'http://www.chinalaborwatch.org/cn/report/142'
+	'https://www.jianshu.com/p/6f6f00077274'
 ]
 
 def getFileName(url):
