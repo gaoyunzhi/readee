@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://www.pewresearch.org/fact-tank/2020/08/20/key-takeaways-on-americans-views-of-and-experiences-with-dating-and-relationships/'
+	'https://www.theguardian.com/us-news/live/2020/aug/26/donald-trump-republican-national-convention-rnc-coronavirus-covid-19-kenosha-jacob-blake-live-updates'
 ]
 
 def getFileName(url):

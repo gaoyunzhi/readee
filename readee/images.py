@@ -59,7 +59,7 @@ def _getImgInsideFigure(figure, domain):
 
 def _cleanupFigure(figure, domain):
 	iframe = figure.find('iframe')
-	if iframe:
+	if iframe and iframe.get('src'):
 		r = fact().new_tag("iframe", src = _formatImgUrl(iframe['src'], domain))
 		iframe.replace_with(r)
 		return figure
