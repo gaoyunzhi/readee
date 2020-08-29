@@ -28,11 +28,12 @@ OFFTOPIC_ATT = [
 	'mailing-list-popup', 'taxonomies', 'authors', 'interactive-content',
 	'socialBTN', 'page-view', 'pn-single-post-wrapper__social', 'pn-pagicle-widget',
 	'mashsb-container', 'give-form-wrap', 'story_bady_info_author',
-	'taglist', 'donate'
+	'taglist', 'donate', 'see-also'
 ]
 
 OFFTOPIC_ATT_WITH_EXCEPTION = {
-	'sidebar': ['no-sidebar', 'one-sidebar', 'penci-main', 'id : page', 'single-post', 'has-sidebar'],
+	'sidebar': ['no-sidebar', 'one-sidebar', 'penci-main', 'id : page', 
+		'single-post', 'has-sidebar', 'sidebar-off'],
 	'hidden': ['lazy', 'false', 'label-hidden', 'rich_media_content', 'start', 'overflow'],
 	'navigation': ['navigation-border-thin-decoration'],
 	'copyright': ['and'],
