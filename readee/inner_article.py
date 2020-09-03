@@ -19,7 +19,6 @@ def _getInnerArticle_(soup, domain):
 		lambda x: x.find("div", {"id" : "js_content"}),
 		lambda x: x.find("div", {"id" : "bodyContent"}),
 		lambda x: x.find("div", {"id" : "content_JS"}),
-		# lambda x: x.find("div", {"id" : "article-body"}),
 		lambda x: x.find("div", class_ = "main-post"),
 		lambda x: x.find("div", class_ = "article"),
 		lambda x: x.find("div", class_ = "field-name-body"),
@@ -54,6 +53,7 @@ def _getInnerArticle_(soup, domain):
 		'chinaworker.': [lambda x: x.find("div", class_ = 'pf-content'),],
 		'thesocietypages.org': [lambda x: x.find("div", class_ = 'post-content'),],
 		'chinadigitaltimes.': [lambda x: x.find("div", class_ = 'post-content'),],
+		'twreporter.org':[lambda x: x.find("div", {"id" : "article-body"}),],
 	}
 	is_short = matchKey(soup.text, SHORT_ARTICLE)
 	text_limit = 150 if is_short else 500

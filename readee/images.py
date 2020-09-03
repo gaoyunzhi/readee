@@ -38,6 +38,8 @@ def _formatImgUrl(raw, domain):
 		raw = re.sub('width=\d\d*', 'width=1300', raw)
 	if matchKey(raw, ['condecdn']):
 		raw = re.sub('/\d\d*/', '/1300/', raw)
+	if matchKey(raw, ['twreport']) and matchKey(raw, ['-tiny']):
+		raw = raw.replace('-tiny', '-desktop')
 	if raw.startswith('//'):
 		return 'https:' + raw
 	if raw.startswith('/'):

@@ -28,7 +28,7 @@ OFFTOPIC_ATT = [
 	'mailing-list-popup', 'taxonomies', 'authors', 'interactive-content',
 	'socialBTN', 'page-view', 'pn-single-post-wrapper__social', 'pn-pagicle-widget',
 	'mashsb-container', 'give-form-wrap', 'story_bady_info_author',
-	'taglist', 'donate', 'see-also'
+	'taglist', 'donate', 'see-also', 'donation-box', 'license__Container',
 ]
 
 OFFTOPIC_ATT_WITH_EXCEPTION = {
