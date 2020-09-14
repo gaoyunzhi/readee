@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://www.twreporter.org/a/opinion-covid-19-reflect-public-health-problem?utm_source=telegram&utm_medium=telegram&utm_campaign=telegram'
+	'https://philomedium.com/blog/80663'
 ]
 
 def getFileName(url):
