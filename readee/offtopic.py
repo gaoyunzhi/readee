@@ -29,7 +29,7 @@ OFFTOPIC_ATT = [
 	'socialBTN', 'page-view', 'pn-single-post-wrapper__social', 'pn-pagicle-widget',
 	'mashsb-container', 'give-form-wrap', 'story_bady_info_author',
 	'taglist', 'donate', 'see-also', 'donation-box', 'license__Container',
-	'field-photo-credit',
+	'field-photo-credit', 'Avatar'
 ]
 
 OFFTOPIC_ATT_WITH_EXCEPTION = {
