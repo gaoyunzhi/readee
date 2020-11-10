@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://zhuanlan.zhihu.com/p/136108267'
+	'https://www.thepaper.cn/newsDetail_forward_9815371'
 ]
 
 def getFileName(url):
