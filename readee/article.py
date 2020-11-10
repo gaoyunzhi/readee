@@ -16,7 +16,6 @@ TO_REMOVE = [
 def _trimWebpage(raw):
 	for to_remove in TO_REMOVE:
 		raw = raw.replace(to_remove, '')
-	raw = raw.replace('<br>', '<br/>')
 	for anchor in ['<!-- detail_toolbox -->', '<!--article_adlist']:
 		index = raw.find(anchor)
 		if index != -1:
