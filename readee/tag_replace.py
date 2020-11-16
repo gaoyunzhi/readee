@@ -31,7 +31,7 @@ def _tagReplace(soup, args = {}):
 			item.replace_with(wrapper)
 	for l in soup.find_all("p"):
 		children = list(l.children)
-		if isinstance(children[0], str):
+		if len(children) >= 1 and isinstance(children[0], str):
 			children[0].replace_with(children[0].lstrip())
 		if len(children) != 1 or not isinstance(children[0], str):
 			continue
