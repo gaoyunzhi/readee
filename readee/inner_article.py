@@ -50,6 +50,9 @@ def _getInnerArticle_(soup, domain):
 		'thepaper': [
 			lambda x: x.find("div", class_ = "news_txt"),
 			lambda x: x.find('div', class_ = 'news_part')],
+		'greenpeace.org': [
+			lambda x: x.find("section", class_ = 'ct-container'),
+			lambda x: x.find("div", class_ = 'descriptiveParagraph')],
 		'gravitysworm': [lambda x: x.find("div", class_ = "copy")],
 		'opinion.cw.com.tw': [lambda x: x.find("article"),],
 		'chinaworker.': [lambda x: x.find("div", class_ = 'pf-content'),],
