@@ -66,7 +66,6 @@ def _isOffTopic(attrs):
 			continue
 		r.append(str(k) + ' : ' + str(v))
 	r = '\n'.join(r)
-	print(r)
 	for att in OFFTOPIC_ATT:
 		if att in r:
 			return att
