@@ -62,10 +62,11 @@ def _isOffTopic(attrs):
 		return 
 	r = []
 	for k, v in attrs.items():
-		if matchKey(k, ['href', 'src', 'url', 'alt', 'data', 'xmlns:fb']):
+		if k != 'data-component' and matchKey(k, ['href', 'src', 'url', 'alt', 'data', 'xmlns:fb']):
 			continue
 		r.append(str(k) + ' : ' + str(v))
 	r = '\n'.join(r)
+	print(r)
 	for att in OFFTOPIC_ATT:
 		if att in r:
 			return att
