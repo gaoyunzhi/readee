@@ -60,7 +60,7 @@ def _getInnerArticle_(soup, domain):
 		'chinadigitaltimes.': [lambda x: x.find("div", class_ = 'post-content'),],
 		'twreporter.org':[lambda x: x.find("div", {"id" : "article-body"}),],
 		'bbc.co.uk': [lambda x: x.find("div", {"dir": "ltr"})],
-		'bbc.com': [lambda x: x.find("article")],
+		'bbc.com': [lambda x: x.find("article"), lambda x: x.find("main")],
 	}
 	is_short = matchKey(soup.text, SHORT_ARTICLE)
 	text_limit = 150 if is_short else 500
