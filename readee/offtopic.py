@@ -31,7 +31,7 @@ OFFTOPIC_ATT = [
 	'taglist', 'donate', 'see-also', 'donation-box', 'license__Container',
 	'field-photo-credit', 'Avatar', 'floating-share', 'meta-box', 'tag-list',
 	'tools__ShareIconBlock', 'aside__Container', 'MetadataAndTool', 'DesktopAsideBlock',
-	'StyledSeparationCurve'
+	'StyledSeparationCurve', 'separation-curve'
 ]
 
 OFFTOPIC_ATT_WITH_EXCEPTION = {
