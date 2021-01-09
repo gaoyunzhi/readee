@@ -6,7 +6,7 @@ import os
 import sys
 
 urls = [
-	'https://www.nytimes.com/interactive/2020/02/18/magazine/google-revolt.html'
+	'https://posts.careerengine.us/p/5ff8a9b5a665802933e3d604?from=latest-posts-panel&type=title'
 ]
 
 def getFileName(url):
